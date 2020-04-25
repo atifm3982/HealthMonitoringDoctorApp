@@ -1,0 +1,137 @@
+package com.f.healthmonitoringdoctor.Activities;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+
+import com.f.healthmonitoringdoctor.R;
+import com.f.healthmonitoringdoctor.ui.AlertNotification.AlertNotificationFragment;
+import com.f.healthmonitoringdoctor.Adapter.DoctorsListAdapter;
+import com.f.healthmonitoringdoctor.ui.SeeAllPatient.SeeAllPatientFragment;
+import com.f.healthmonitoringdoctor.ui.SeeMedicinePrescriptions.SeeMedicinePrescriptionsFragment;
+import com.f.healthmonitoringdoctor.ui.home.HomeFragment;
+import com.google.android.material.navigation.NavigationView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.ui.AppBarConfiguration;
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    private AppBarConfiguration mAppBarConfiguration;
+SearchView searchView;
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle actionBarDrawerToggle;
+
+private DoctorsListAdapter list;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+         HomeFragment();
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+
+        ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        mAppBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.nav_home, R.id.nav_seeallldoctor,
+                R.id.nav_EmergencyAlertNotification,  R.id.nav_Seemedicineprescriptionlist)
+                .setDrawerLayout(drawerLayout)
+                .build();
+
+      DataManager(getSupportFragmentManager());
+    }
+    public void DataManager(FragmentManager fragmentManager) {
+        Fragment fragment = new HomeFragment();
+        fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId()==R.id.nav_home){
+
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+public void HomeFragment(){
+    HomeFragment frag = new HomeFragment();
+    FragmentManager manager = getSupportFragmentManager();
+    FragmentTransaction transaction = manager.beginTransaction();
+    transaction.replace(R.id.nav_host_fragment,frag,"Test Fragment");
+    transaction.commit();
+
+}
+    public void SeeAllPatientFragment(){
+        SeeAllPatientFragment frag = new SeeAllPatientFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.nav_host_fragment,frag,"Test Fragment");
+        transaction.commit();
+
+    }
+    public void SeeMedicinePrescriptionFragment(){
+        SeeMedicinePrescriptionsFragment frag = new SeeMedicinePrescriptionsFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.nav_host_fragment,frag,"Test Fragment");
+        transaction.commit();
+
+    }
+    public void AlertNotificationFragment(){
+        AlertNotificationFragment frag = new AlertNotificationFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.nav_host_fragment,frag,"Test Fragment");
+        transaction.commit();
+
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+ if (id == R.id.nav_home)
+ {
+     HomeFragment();
+ }
+ else if (id == R.id.nav_seealllpatient)
+ {
+     SeeAllPatientFragment();
+ }
+
+ else if (id == R.id.nav_EmergencyAlertNotification) {
+     AlertNotificationFragment();
+ }
+ else if (id == R.id.nav_Seemedicineprescriptionlist)
+ {
+     SeeMedicinePrescriptionFragment();
+ }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+
+}

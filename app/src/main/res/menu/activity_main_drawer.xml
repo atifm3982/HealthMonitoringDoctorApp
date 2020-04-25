@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_menu_camera"
+        android:title="@string/menu_home" />
+
+    <item
+        android:id="@+id/nav_seealllpatient"
+        android:icon="@drawable/ic_menu_camera"
+        android:title="See All Patient" />
+
+<!--    <item-->
+<!--        android:id="@+id/nav_EmergencyAlertNotification"-->
+<!--        android:icon="@drawable/ic_menu_camera"-->
+<!--        android:title="Emergency Alert Notification" />-->
+
+<!--    <item-->
+<!--        android:id="@+id/nav_Seemedicineprescriptionlist"-->
+<!--        android:icon="@drawable/ic_menu_camera"-->
+<!--        android:title="See medicine prescriptions list(prescribe by doctor )  " />-->
+    </group>
+</menu>
