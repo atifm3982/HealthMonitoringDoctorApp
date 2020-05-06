@@ -18,27 +18,27 @@ Button temp,heartbeat,ecg;
         temp=(Button)findViewById(R.id.temp);
         heartbeat=(Button)findViewById(R.id.heart);
         ecg=(Button)findViewById(R.id.ecg);
-//        heartbeat.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent =new Intent(ProfileActivity.this, CheckHeartbeatActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//        ecg.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent1 =new Intent(ProfileActivity.this, CheckEcgActivity.class);
-//                startActivity(intent1);
-//            }
-//        });
-//        temp.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent2 =new Intent(ProfileActivity.this, CheckTemperatureActivity.class);
-//                startActivity(intent2);
-//            }
-//        });
-//
+        heartbeat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(ProfileActivity.this, CheckHeartbeatActivity.class);
+                startActivity(intent);
+            }
+        });
+        ecg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 =new Intent(ProfileActivity.this, CheckEcgActivity.class);
+                startActivity(intent1);
+            }
+        });
+        temp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 =new Intent(ProfileActivity.this, CheckTemperatureActivity.class);
+                startActivity(intent2);
+            }
+        });
+
    }
 }
