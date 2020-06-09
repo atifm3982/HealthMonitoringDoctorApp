@@ -7,7 +7,7 @@
     android:gravity="center">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        app:title="Add New Patient"
+        app:title="Add  Medicine"
         android:layout_gravity="center"
         android:gravity="center"
         app:titleTextColor="#fff"
@@ -27,7 +27,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Patient Information"
+            android:text="Medicine Information"
+            android:layout_marginTop="10dp"
             android:textColorLink="@color/colorPrimary"
             android:textColor="#000"
             android:textSize="22dp"
@@ -37,8 +38,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:hint="Patient name"
-            android:layout_marginTop="10dp"
+            android:hint="Medicine name"
+            android:layout_marginTop="20dp"
             android:background="@drawable/rounded_rect_bg"
             android:padding="10dp"
             android:layout_marginRight="10dp" />
@@ -50,63 +51,26 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/rounded_rect_bg"
-            android:hint="Father name"
+            android:hint="Disease"
             android:padding="10dp" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:hint="Phone Number"
+            android:hint="Symptom"
             android:layout_marginTop="10dp"
             android:background="@drawable/rounded_rect_bg"
             android:padding="10dp"
             android:layout_marginRight="10dp" />
 
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:padding="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rounded_rect_bg"
-            android:hint="Address"
-            android:layout_marginRight="10dp" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rounded_rect_bg"
-            android:layout_marginLeft="10dp"
-            android:hint="Date"
-            android:layout_marginRight="10dp" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:padding="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rounded_rect_bg"
 
-            android:hint="disease"
-            android:layout_marginRight="10dp"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:padding="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rounded_rect_bg"
-            android:hint="device id"
-
-            android:layout_marginRight="10dp" />
 
     </LinearLayout>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Patient"
+        android:text="Save"
         android:layout_margin="10dp"
         android:textColor="#fff"
         android:background="@drawable/background_selector"

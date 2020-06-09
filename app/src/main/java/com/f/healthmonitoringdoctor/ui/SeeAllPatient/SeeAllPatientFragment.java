@@ -1,6 +1,5 @@
 package com.f.healthmonitoringdoctor.ui.SeeAllPatient;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,10 +14,8 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.f.healthmonitoringdoctor.Activities.AddPatientActivity;
 import com.f.healthmonitoringdoctor.R;
 import com.f.healthmonitoringdoctor.Adapter.PatientsListAdapter;
-import com.f.healthmonitoringdoctor.Model.Doctor;
 import com.f.healthmonitoringdoctor.Model.Patient;
 
 import java.util.ArrayList;
@@ -39,14 +36,14 @@ public class SeeAllPatientFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_see_all_patient, container, false);
 
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("All Patient List");
-        save = (Button) root.findViewById(R.id.save);
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent =new Intent(getContext(), AddPatientActivity.class);
-                startActivity(intent);
-            }
-        });
+//        save = (Button) root.findViewById(R.id.save);
+//        save.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent =new Intent(getContext(), AddPatientActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
         searchView = (SearchView)root.findViewById(R.id.search);

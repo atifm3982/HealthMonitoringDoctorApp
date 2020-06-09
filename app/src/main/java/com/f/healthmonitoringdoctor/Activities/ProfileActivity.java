@@ -10,7 +10,7 @@ import com.f.healthmonitoringdoctor.R;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileActivity extends AppCompatActivity {
-Button temp,heartbeat,ecg;
+Button temp,heartbeat,ecg,medicine;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +18,8 @@ Button temp,heartbeat,ecg;
         temp=(Button)findViewById(R.id.temp);
         heartbeat=(Button)findViewById(R.id.heart);
         ecg=(Button)findViewById(R.id.ecg);
+        medicine=(Button)findViewById(R.id.medicine);
+
         heartbeat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +41,12 @@ Button temp,heartbeat,ecg;
                 startActivity(intent2);
             }
         });
-
+        medicine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent3 =new Intent(ProfileActivity.this, AddMedicineActivity.class);
+                startActivity(intent3);
+            }
+        });
    }
 }

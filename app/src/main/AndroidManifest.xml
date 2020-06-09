@@ -9,13 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.AddPatientActivity"></activity>
         <activity android:name=".Activities.ProfileActivity" />
         <activity android:name=".Activities.ProfileActivityDoctor" />
         <activity android:name=".Activities.SendMassageActivity" />
         <activity android:name=".Activities.CheckEcgActivity"></activity>
         <activity android:name=".Activities.CheckHeartbeatActivity"></activity>
         <activity android:name=".Activities.CheckTemperatureActivity"></activity>
+        <activity android:name=".Activities.AddMedicineActivity"></activity>
 
         <activity
             android:name=".Activities.SplashActivity"
