@@ -5,32 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activities.ProfileActivityDoctor">
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_top"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:minHeight="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
-
-            >
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Doctor Profile"
-                android:textSize="23dp"
-                android:layout_gravity="center"
-                android:textColor="#fff"
-                android:id="@+id/toolbar_title" />
-
-
-        </androidx.appcompat.widget.Toolbar>
 
     </LinearLayout>
 

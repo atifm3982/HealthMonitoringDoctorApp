@@ -4,48 +4,48 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import com.f.healthmonitoringdoctor.R;
-import com.f.healthmonitoringdoctor.Adapter.DoctorsListAdapter;
-import com.f.healthmonitoringdoctor.Model.Doctor;
+import com.f.healthmonitoringdoctor.Adapter.PatientsListAdapter;
+import com.f.healthmonitoringdoctor.Model.Patient;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private HomeViewModel seeAllPatientViewModel;
     RecyclerView recyclerView;
-    private List<Doctor> doctors;
+    private List<Patient> patients;
     private SearchView searchView;
-    private DoctorsListAdapter list;
-
+    private PatientsListAdapter list;
+    Button save;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
+        seeAllPatientViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Home");
+        View root = inflater.inflate(R.layout.fragment_see_all_patient, container, false);
 
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Home");
+//        save = (Button) root.findViewById(R.id.save);
+//        save.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent =new Intent(getContext(), AddPatientActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+
+
         searchView = (SearchView)root.findViewById(R.id.search);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -65,21 +65,23 @@ public class HomeFragment extends Fragment {
             }
         });
         RecyclerView recyclerView = root.findViewById(R.id.recycler_view);
-        doctors = new ArrayList<>();
-        doctors.add(new Doctor("ali","surgen","03075445663"));
-        doctors.add(new Doctor("hassan","surgen","03075445663"));
-        doctors.add(new Doctor("raza","surgen","03075445663"));
-        doctors.add(new Doctor("asad","surgen","03075445663"));
-        doctors.add(new Doctor("awais","surgen","03075445663"));
-        doctors.add(new Doctor("haseeb","surgen","03075445663"));
-        doctors.add(new Doctor("faisal","surgen","03075445663"));
-        doctors.add(new Doctor("babar","surgen","03075445663"));
-        doctors.add(new Doctor("ubaid","surgen","03075445663"));
-        doctors.add(new Doctor("moiz","surgen","03075445663"));
-        doctors.add(new Doctor("hamza","surgen","03075445663"));
-        doctors.add(new Doctor("hamza","surgen","03075445663"));
+        patients = new ArrayList<>();
+        patients.add(new Patient("ali","umer"));
+        patients.add(new Patient("hassan","usman"));
+        patients.add(new Patient("raza","munir"));
+        patients.add(new Patient("asad","uzair"));
+        patients.add(new Patient("awais","uzair"));
+        patients.add(new Patient("haseeb","adnan"));
+        patients.add(new Patient("faisal","umer"));
+        patients.add(new Patient("babar","azam"));
+        patients.add(new Patient("ubaid","fazal"));
+        patients.add(new Patient("moiz","kamran"));
+        patients.add(new Patient("hamza","aftab"));
+        patients.add(new Patient("hamza","khalid"));
+        ;
 
-        list = new DoctorsListAdapter(doctors, getContext());
+
+        list = new PatientsListAdapter(patients, getContext());
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setAdapter(list );
@@ -87,4 +89,5 @@ public class HomeFragment extends Fragment {
         return root;
 
     }
+
 }

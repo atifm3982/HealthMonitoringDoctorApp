@@ -1,16 +1,16 @@
-package com.f.healthmonitoringdoctor.ui.SeeAllPatient;
+package com.f.healthmonitoringdoctor.ui.Profile;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SeeAllPatientViewModel extends ViewModel {
+public class ProfileViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SeeAllPatientViewModel() {
+    public ProfileViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is Doctor fragment");
+        mText.setValue("This is Alert Notification fragment");
     }
 
     public LiveData<String> getText() {

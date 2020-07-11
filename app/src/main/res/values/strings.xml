@@ -12,6 +12,6 @@
     <string name="menu_see_all_doctor">SeeAllDoctor</string>
     <string name="menu_see_medicine_prescription">SeeMedicinePrescription</string>
     <string name="menu_send_massage">SendMassage</string>
-    <string name="menu_alert_notification">AlertNotification</string>
+    <string name="menu_alert_notification">Profile</string>
     <string name="home_second">Home Second</string>
 </resources>

@@ -1,16 +1,13 @@
 package com.f.healthmonitoringdoctor.Activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.f.healthmonitoringdoctor.R;
-import com.f.healthmonitoringdoctor.ui.AlertNotification.AlertNotificationFragment;
-import com.f.healthmonitoringdoctor.Adapter.DoctorsListAdapter;
-import com.f.healthmonitoringdoctor.ui.SeeAllPatient.SeeAllPatientFragment;
-import com.f.healthmonitoringdoctor.ui.SeeMedicinePrescriptions.SeeMedicinePrescriptionsFragment;
+import com.f.healthmonitoringdoctor.ui.Profile.ProfileFragment;
 import com.f.healthmonitoringdoctor.ui.home.HomeFragment;
+import com.f.healthmonitoringdoctor.ui.SeeMedicinePrescriptions.SeeMedicinePrescriptionsFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
@@ -32,7 +29,6 @@ SearchView searchView;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
-private DoctorsListAdapter list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,8 +47,8 @@ private DoctorsListAdapter list;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_seeallldoctor,
-                R.id.nav_EmergencyAlertNotification,  R.id.nav_Seemedicineprescriptionlist)
+                R.id.nav_home,
+                R.id.nav_ProfileFragment,  R.id.nav_Seemedicineprescriptionlist)
                 .setDrawerLayout(drawerLayout)
                 .build();
 
@@ -85,14 +81,7 @@ public void HomeFragment(){
     transaction.commit();
 
 }
-    public void SeeAllPatientFragment(){
-        SeeAllPatientFragment frag = new SeeAllPatientFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.nav_host_fragment,frag,"Test Fragment");
-        transaction.commit();
 
-    }
     public void SeeMedicinePrescriptionFragment(){
         SeeMedicinePrescriptionsFragment frag = new SeeMedicinePrescriptionsFragment();
         FragmentManager manager = getSupportFragmentManager();
@@ -101,8 +90,8 @@ public void HomeFragment(){
         transaction.commit();
 
     }
-    public void AlertNotificationFragment(){
-        AlertNotificationFragment frag = new AlertNotificationFragment();
+    public void ProfileFragment(){
+        ProfileFragment frag = new ProfileFragment();
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.replace(R.id.nav_host_fragment,frag,"Test Fragment");
@@ -117,13 +106,10 @@ public void HomeFragment(){
  {
      HomeFragment();
  }
- else if (id == R.id.nav_seealllpatient)
- {
-     SeeAllPatientFragment();
- }
 
- else if (id == R.id.nav_EmergencyAlertNotification) {
-     AlertNotificationFragment();
+
+ else if (id == R.id.nav_profile) {
+     ProfileFragment();
  }
  else if (id == R.id.nav_Seemedicineprescriptionlist)
  {
