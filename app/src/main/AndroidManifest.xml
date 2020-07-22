@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.f.healthmonitoringdoctor">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -9,13 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.ProfileActivity" />
-        <activity android:name=".Activities.ProfileActivityDoctor" />
+        <activity android:name=".Activities.ProfilePatientActivity" />
         <activity android:name=".Activities.SendMassageActivity" />
         <activity android:name=".Activities.CheckEcgActivity"></activity>
         <activity android:name=".Activities.CheckHeartbeatActivity"></activity>
         <activity android:name=".Activities.CheckTemperatureActivity"></activity>
         <activity android:name=".Activities.AddMedicineActivity"></activity>
+        <activity android:name=".Activities.SeeMedicineListActivity"></activity>
 
         <activity
             android:name=".Activities.SplashActivity"

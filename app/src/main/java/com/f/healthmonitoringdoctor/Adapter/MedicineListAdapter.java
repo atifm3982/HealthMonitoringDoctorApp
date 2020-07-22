@@ -16,10 +16,10 @@ import android.widget.Filterable;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
+import com.f.healthmonitoringdoctor.Activities.MainActivity;
+import com.f.healthmonitoringdoctor.Model.Medicine;
 import com.f.healthmonitoringdoctor.Model.Medicine;
 import com.f.healthmonitoringdoctor.R;
-import com.f.healthmonitoringdoctor.Activities.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,12 +36,14 @@ public class MedicineListAdapter extends RecyclerView.Adapter<MedicineListAdapte
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView medicinename,prescriptedBy;
+        public TextView medicinename,prescriptedBy,symptoms,disease;
 
         public MyViewHolder(View view) {
             super(view);
-            medicinename = (TextView) view.findViewById(R.id.mname);
-            prescriptedBy = (TextView) view.findViewById(R.id.pname);
+            medicinename = (TextView) view.findViewById(R.id.medicine);
+            prescriptedBy = (TextView) view.findViewById(R.id.prescripted);
+            symptoms = (TextView) view.findViewById(R.id.symptoms);
+            disease = (TextView) view.findViewById(R.id.disease);
 
 
 
@@ -68,15 +70,17 @@ public class MedicineListAdapter extends RecyclerView.Adapter<MedicineListAdapte
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
          final Medicine movie = filterMedicineList.get(position);
-        holder.medicinename.setText(movie.getMedicinename());
-        holder.prescriptedBy.setText(movie.getPrescriptedBy());
+        holder.medicinename.setText(movie.getMedicine());
+        holder.prescriptedBy.setText(movie.getDisease());
+        holder.symptoms.setText(movie.getSymptom());
+        holder.disease.setText(movie.getDisease());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "anxhag", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "anxhag", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, MainActivity.class );
-                showNotification(context,"zaad","asdad",intent);
+//                showNotification(context,"zaad","asdad",intent);
             }
         });
 
@@ -132,7 +136,7 @@ public class MedicineListAdapter extends RecyclerView.Adapter<MedicineListAdapte
 
                         // name match condition. this might differ depending on your requirement
                         // here we are looking for name or phone number match
-                        if (row.getMedicinename().toLowerCase().contains(charString.toLowerCase()) ) {
+                        if (row.getMedicine().toLowerCase().contains(charString.toLowerCase()) ) {
                             filteredList.add(row);
                         }
                     }

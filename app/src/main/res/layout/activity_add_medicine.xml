@@ -35,6 +35,7 @@
             />
 
         <EditText
+            android:id="@+id/medicine_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -45,6 +46,7 @@
             android:layout_marginRight="10dp" />
 
         <EditText
+            android:id="@+id/disease"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -54,6 +56,7 @@
             android:hint="Disease"
             android:padding="10dp" />
         <EditText
+            android:id="@+id/symptom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -68,6 +71,7 @@
 
     </LinearLayout>
     <Button
+        android:id="@+id/save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Save"

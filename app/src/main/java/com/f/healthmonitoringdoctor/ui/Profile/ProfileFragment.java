@@ -1,6 +1,6 @@
 package com.f.healthmonitoringdoctor.ui.Profile;
 
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,19 +8,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.f.healthmonitoringdoctor.Activities.AddMedicineActivity;
-import com.f.healthmonitoringdoctor.Activities.CheckEcgActivity;
-import com.f.healthmonitoringdoctor.Activities.CheckHeartbeatActivity;
-import com.f.healthmonitoringdoctor.Activities.CheckTemperatureActivity;
-import com.f.healthmonitoringdoctor.Activities.ProfileActivity;
 import com.f.healthmonitoringdoctor.R;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class ProfileFragment extends Fragment {
 
@@ -40,8 +35,32 @@ public class ProfileFragment extends Fragment {
 //            public void onChanged(@Nullable String s) {
 //                textView.setText(s);
 //            }
-//        });
+//        });*
+        SharedPreferences prefs = getActivity().getSharedPreferences("login", MODE_PRIVATE);
+        String token = prefs.getString("Token", null);//"No name defined" is the default value.
+        String _id = prefs.getString("id", null);//"No name defined" is the default value.
+        String name = prefs.getString("Name", null);//"No name defined" is the default value.
+        String fname = prefs.getString("Fname", null);//"No name defined" is the default value.
+        String address = prefs.getString("Address", null);//"No name defined" is the default value.
+        String phone = prefs.getString("phone", null);//"No name defined" is the default value.
+        String specialization = prefs.getString("Specialization", null);//"No name defined" is the default value.
+        String qualification = prefs.getString("Qualification", null);//"No name defined" is the default value.
+        String date = prefs.getString("Date", null);//"No name defined" is the default value.
+        TextView Dname= root .findViewById(R.id.dctrname);
+        TextView Fathername= root.findViewById(R.id.dfname);
+        TextView Address= root .findViewById(R.id.daddress);
+        TextView Phonenumber= root .findViewById(R.id.dphone);
+        TextView Specialization= root .findViewById(R.id.dspec);
+        TextView Qualification= root .findViewById(R.id.dqual);
+        TextView Date=root .findViewById(R.id.ddate);
 
+        Dname.setText(name);
+        Fathername.setText(fname);
+        Address.setText(address);
+        Specialization.setText(specialization);
+        Phonenumber.setText(phone);
+        Date.setText(date);
+        Qualification.setText(qualification);
         return root;
     }
 }

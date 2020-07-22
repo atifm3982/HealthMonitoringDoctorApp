@@ -7,7 +7,6 @@ import android.view.MenuItem;
 import com.f.healthmonitoringdoctor.R;
 import com.f.healthmonitoringdoctor.ui.Profile.ProfileFragment;
 import com.f.healthmonitoringdoctor.ui.home.HomeFragment;
-import com.f.healthmonitoringdoctor.ui.SeeMedicinePrescriptions.SeeMedicinePrescriptionsFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
@@ -82,14 +81,9 @@ public void HomeFragment(){
 
 }
 
-    public void SeeMedicinePrescriptionFragment(){
-        SeeMedicinePrescriptionsFragment frag = new SeeMedicinePrescriptionsFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.nav_host_fragment,frag,"Test Fragment");
-        transaction.commit();
 
-    }
+
+
     public void ProfileFragment(){
         ProfileFragment frag = new ProfileFragment();
         FragmentManager manager = getSupportFragmentManager();
@@ -111,10 +105,7 @@ public void HomeFragment(){
  else if (id == R.id.nav_profile) {
      ProfileFragment();
  }
- else if (id == R.id.nav_Seemedicineprescriptionlist)
- {
-     SeeMedicinePrescriptionFragment();
- }
+
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }

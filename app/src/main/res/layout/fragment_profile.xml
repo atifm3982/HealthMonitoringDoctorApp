@@ -51,9 +51,10 @@
                     android:textSize="11.3sp"/>
 
                 <TextView
+                    android:id="@+id/dctrname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginTop="-2dp"
                     android:paddingLeft="21dp"
                     android:paddingBottom="15dp"
                     android:text=""
@@ -92,9 +93,10 @@
                     android:textSize="11.3sp"/>
 
                 <TextView
+                    android:id="@+id/dfname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginTop="-2dp"
                     android:paddingLeft="21dp"
                     android:paddingBottom="15dp"
                     android:text=""
@@ -134,9 +136,10 @@
                     android:textSize="11.3sp"/>
 
                 <TextView
+                    android:id="@+id/daddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginTop="-2dp"
                     android:paddingLeft="21dp"
                     android:paddingBottom="15dp"
                     android:text=""
@@ -176,9 +179,10 @@
                     android:textSize="11.3sp"/>
 
                 <TextView
+                    android:id="@+id/dphone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginTop="-2dp"
                     android:paddingLeft="21dp"
                     android:paddingBottom="15dp"
                     android:text=""
@@ -218,9 +222,11 @@
                     android:textSize="11.3sp"/>
 
                 <TextView
+
+                    android:id="@+id/dspec"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginTop="-2dp"
                     android:paddingLeft="21dp"
                     android:paddingBottom="15dp"
                     android:text=""
@@ -260,9 +266,10 @@
                     android:textSize="11.3sp"/>
 
                 <TextView
+                    android:id="@+id/ddate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginTop="-2dp"
                     android:paddingLeft="21dp"
                     android:paddingBottom="15dp"
                     android:text=""
@@ -302,9 +309,10 @@
                     android:textSize="11.3sp"/>
 
                 <TextView
+                    android:id="@+id/dqual"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginTop="-2dp"
                     android:paddingLeft="21dp"
                     android:paddingBottom="15dp"
                     android:text=""
